@@ -2,6 +2,7 @@ import threading
 import binascii
 from time import sleep
 from utils import base64_to_pil_image, pil_image_to_base64
+from heartrate import heartrate
 
 
 class Camera(object):
@@ -26,7 +27,8 @@ class Camera(object):
 
         ################## where the hard work is done ############
         # output_img is an PIL image
-        output_img = self.makeup_artist.apply_makeup(input_img) # input img to be used
+        #output_img = self.makeup_artist.apply_makeup(input_img) # input img to be used
+        output_img = heartrate()
 
         # output_str is a base64 string in ascii
         output_str = pil_image_to_base64(output_img)
