@@ -21,9 +21,9 @@ def heartrate():
     # Webcam Parameters
     webcam = None
     if len(sys.argv) == 2:
-        webcam = cv2.VideoCapture("https://flaskwebcam.herokuapp.com/video_feed")
+        webcam = cv2.VideoCapture("/g2pfp4mb9hmr/original.mov")
     else:
-        webcam = cv2.VideoCapture("https://flaskwebcam.herokuapp.com/video_feed")
+        webcam = cv2.VideoCapture("/g2pfp4mb9hmr/original.mov")
 
     realWidth = 320
     realHeight = 240
@@ -89,7 +89,7 @@ def heartrate():
             originalVideoWriter.write(originalFrame)
 
         detectionFrame = frame[videoHeight//2:realHeight-videoHeight//2, videoWidth//2:realWidth-videoWidth//2, :]
-        #print(detectionFrame)
+        print(detectionFrame)
 
         # Construct Gaussian Pyramid
         videoGauss[bufferIndex] = buildGauss(detectionFrame, levels+1)[levels]
