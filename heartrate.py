@@ -8,8 +8,7 @@ import numpy as np
 import cv2
 import sys
 
-def heartrate(imgweb):
-    return imgweb
+def heartrate():
     # Helper Methods
     def buildGauss(frame, levels):
         pyramid = [frame]
@@ -126,15 +125,15 @@ def heartrate(imgweb):
         bufferIndex = (bufferIndex + 1) % bufferSize
 
         frame[videoHeight//2:realHeight-videoHeight//2, videoWidth//2:realWidth-videoWidth//2, :] = outputFrame
-        #cv2.rectangle(frame, (videoWidth//2 , videoHeight//2), (realWidth-videoWidth//2, realHeight-videoHeight//2), boxColor, boxWeight)
+        cv2.rectangle(frame, (videoWidth//2 , videoHeight//2), (realWidth-videoWidth//2, realHeight-videoHeight//2), boxColor, boxWeight)
         if i > bpmBufferSize:
-            #cv2.putText(frame, "BPM: %d" % bpmBuffer.mean(), bpmTextLocation, font, fontScale, fontColor, lineType)
+            cv2.putText(frame, "BPM: %d" % bpmBuffer.mean(), bpmTextLocation, font, fontScale, fontColor, lineType)
         else:
-            #cv2.putText(frame, "Calculating BPM...", loadingTextLocation, font, fontScale, fontColor, lineType)
+            cv2.putText(frame, "Calculating BPM...", loadingTextLocation, font, fontScale, fontColor, lineType)
 
          outputVideoWriter.write(frame)
          print(bpmBuffer.mean())
-
+    return frame
         # if len(sys.argv) != 2:
         #     cv2.imshow("Webcam Heart Rate Monitor", frame)
         #     if cv2.waitKey(1) & 0xFF == ord('q'):
