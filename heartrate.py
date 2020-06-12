@@ -21,9 +21,9 @@ def heartrate():
     # Webcam Parameters
     webcam = None
     if len(sys.argv) == 2:
-        webcam = cv2.VideoCapture("/original.mov")
+        webcam = cv2.VideoCapture("https://flaskwebcam.herokuapp.com/video_feed")
     else:
-        webcam = cv2.VideoCapture("/original.mov")
+        webcam = cv2.VideoCapture("https://flaskwebcam.herokuapp.com/video_feed")
 
     realWidth = 320
     realHeight = 240
@@ -36,11 +36,11 @@ def heartrate():
 
     # Output Videos
     if len(sys.argv) != 2:
-        originalVideoFilename = "original3.mov"
+        originalVideoFilename = "/g2pfp4mb9hmr/public/original3.mov"
         originalVideoWriter = cv2.VideoWriter()
         originalVideoWriter.open(originalVideoFilename, cv2.VideoWriter_fourcc('j', 'p', 'e', 'g'), videoFrameRate, (realWidth, realHeight), True)
 
-    outputVideoFilename = "output3.mov"
+    outputVideoFilename = "/g2pfp4mb9hmr/public/original3.mov"
     outputVideoWriter = cv2.VideoWriter()
     outputVideoWriter.open(outputVideoFilename, cv2.VideoWriter_fourcc('j', 'p', 'e', 'g'), videoFrameRate, (realWidth, realHeight), True)
 
