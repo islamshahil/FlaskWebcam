@@ -126,8 +126,8 @@ def heartrate():
         else:
             cv2.putText(frame, "Calculating BPM...", loadingTextLocation, font, fontScale, fontColor, lineType)
 
-         outputVideoWriter.write(frame)
-         print(bpmBuffer.mean())
+        outputVideoWriter.write(frame)
+        print(bpmBuffer.mean())
     #return frame
         # if len(sys.argv) != 2:
         #     cv2.imshow("Webcam Heart Rate Monitor", frame)
