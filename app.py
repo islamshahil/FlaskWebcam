@@ -4,7 +4,6 @@ import logging
 from flask import Flask, render_template, Response
 from flask_socketio import SocketIO
 from camera import Camera
-from heartrate import heartrate
 from utils import base64_to_pil_image, pil_image_to_base64
 
 
@@ -47,12 +46,6 @@ def gen():
 @app.route('/video_feed')
 def video_feed():
     """Video streaming route. Put this in the src attribute of an img tag."""
-    return Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
-@app.route('/heart_rate')
-def heart_rate():
-    """Video streaming route. Put this in the src attribute of an img tag."""
-    heartrate()
     return Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
