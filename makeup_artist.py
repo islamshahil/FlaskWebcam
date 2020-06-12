@@ -8,6 +8,5 @@ class Makeup_artist(object):
         pass
 
     def apply_makeup(self, img):
-    	heartrate()
         return img.transpose(Image.FLIP_TOP_BOTTOM) #invert img
         
