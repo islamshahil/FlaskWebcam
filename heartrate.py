@@ -1,8 +1,3 @@
-"""
-Webcam Heart Rate Monitor
-Gilad Oved
-December 2018
-"""
 
 import numpy as np
 import cv2
