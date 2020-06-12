@@ -8,7 +8,8 @@ import numpy as np
 import cv2
 import sys
 
-def heartrate():
+def heartrate(imgweb):
+    return imgweb
     # Helper Methods
     def buildGauss(frame, levels):
         pyramid = [frame]
