@@ -94,7 +94,7 @@ def heartrate():
             originalVideoWriter.write(originalFrame)
 
         detectionFrame = frame[videoHeight//2:realHeight-videoHeight//2, videoWidth//2:realWidth-videoWidth//2, :]
-        print(detectionFrame)
+        #print(detectionFrame)
 
         # Construct Gaussian Pyramid
         videoGauss[bufferIndex] = buildGauss(detectionFrame, levels+1)[levels]
@@ -125,14 +125,14 @@ def heartrate():
         bufferIndex = (bufferIndex + 1) % bufferSize
 
         frame[videoHeight//2:realHeight-videoHeight//2, videoWidth//2:realWidth-videoWidth//2, :] = outputFrame
-        cv2.rectangle(frame, (videoWidth//2 , videoHeight//2), (realWidth-videoWidth//2, realHeight-videoHeight//2), boxColor, boxWeight)
+        #cv2.rectangle(frame, (videoWidth//2 , videoHeight//2), (realWidth-videoWidth//2, realHeight-videoHeight//2), boxColor, boxWeight)
         if i > bpmBufferSize:
-            cv2.putText(frame, "BPM: %d" % bpmBuffer.mean(), bpmTextLocation, font, fontScale, fontColor, lineType)
+            #cv2.putText(frame, "BPM: %d" % bpmBuffer.mean(), bpmTextLocation, font, fontScale, fontColor, lineType)
         else:
-            cv2.putText(frame, "Calculating BPM...", loadingTextLocation, font, fontScale, fontColor, lineType)
+            #cv2.putText(frame, "Calculating BPM...", loadingTextLocation, font, fontScale, fontColor, lineType)
 
          outputVideoWriter.write(frame)
-    return frame
+         print(bpmBuffer.mean())
 
         # if len(sys.argv) != 2:
         #     cv2.imshow("Webcam Heart Rate Monitor", frame)
