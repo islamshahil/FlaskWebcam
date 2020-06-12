@@ -1,6 +1,4 @@
 from PIL import Image
-import os
-from heartrate import heartrate
 
 
 class Makeup_artist(object):
