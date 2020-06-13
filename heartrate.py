@@ -36,11 +36,11 @@ def heartrate():
 
     # Output Videos
     if len(sys.argv) != 2:
-        originalVideoFilename = "g2pfp4mb9hmr/original3.mov"
+        originalVideoFilename = "https://cloud-cube.s3.amazonaws.com/g2pfp4mb9hmr/public/original3.mov"
         originalVideoWriter = cv2.VideoWriter()
         originalVideoWriter.open(originalVideoFilename, cv2.VideoWriter_fourcc('j', 'p', 'e', 'g'), videoFrameRate, (realWidth, realHeight), True)
 
-    outputVideoFilename = "g2pfp4mb9hmr/original3.mov"
+    outputVideoFilename = "https://cloud-cube.s3.amazonaws.com/g2pfp4mb9hmr/public/original3.mov"
     outputVideoWriter = cv2.VideoWriter()
     outputVideoWriter.open(outputVideoFilename, cv2.VideoWriter_fourcc('j', 'p', 'e', 'g'), videoFrameRate, (realWidth, realHeight), True)
 
