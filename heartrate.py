@@ -21,9 +21,9 @@ def heartrate():
     # Webcam Parameters
     webcam = None
     if len(sys.argv) == 2:
-        webcam = cv2.VideoCapture("g2pfp4mb9hmr/original.mov")
+        webcam = cv2.VideoCapture("https://cloud-cube.s3.amazonaws.com/g2pfp4mb9hmr/original.mov")
     else:
-        webcam = cv2.VideoCapture("g2pfp4mb9hmr/original.mov")
+        webcam = cv2.VideoCapture("https://cloud-cube.s3.amazonaws.com/g2pfp4mb9hmr/original.mov")
 
     realWidth = 320
     realHeight = 240
