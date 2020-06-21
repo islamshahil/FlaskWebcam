@@ -11,3 +11,4 @@ def pil_image_to_base64(pil_image):
 
 def base64_to_pil_image(base64_img):
     return Image.open(BytesIO(base64.b64decode(base64_img)))  #base64 to img
+
