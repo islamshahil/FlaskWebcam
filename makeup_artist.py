@@ -1,5 +1,5 @@
 import os
-from pil import Image
+from PIL import Image
 
 
 class Makeup_artist(object):
