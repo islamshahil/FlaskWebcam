@@ -13,6 +13,7 @@ app = Flask(__name__)
 # app.config['DEBUG'] = True
 socketio = SocketIO(app)
 camera = Camera(Makeup_artist()) # cam
+#solving issues
 
 
 @socketio.on('input image', namespace='/test')
