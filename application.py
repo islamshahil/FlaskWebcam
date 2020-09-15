@@ -1,8 +1,8 @@
 from sys import stdout
-from makeup_artist import Makeup_artist
 import logging
 from flask import Flask, render_template, Response
 from flask_socketio import SocketIO
+from makeup_artist import Makeup_artist
 from camera import Camera
 from utils import base64_to_pil_image, pil_image_to_base64
 
